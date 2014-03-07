@@ -3,7 +3,7 @@
  * Examples and documentation at:
  * http://jquery.homerocavazos.com/formvalidation
  * Copyright (c) 2013 Homero Cavazos
- * Version: 2.0 (25-FEB-2014)
+ * Version: 2.1.0 (25-FEB-2014)
  * Requires: jQuery v1.7.1 or later
  */
 (function ($){
