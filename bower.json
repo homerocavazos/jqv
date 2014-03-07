@@ -6,6 +6,11 @@
     "jquery": ">= 1.7"
   },
   "ignore": [
-    "MIT-LICENSE.txt"
+  "**/*.txt",
+  "node_modules",
+  "bower_components",
+  "app/bower_components",
+  "test",
+  "tests"
   ]
 }
