@@ -1,0 +1,11 @@
+{
+  "name": "jqv",
+  "version": "2.1.0",
+  "main": "./jquery.jqv.js",
+  "dependencies": {
+    "jquery": ">= 1.7"
+  },
+  "ignore": [
+    "MIT-LICENSE.txt"
+  ]
+}
