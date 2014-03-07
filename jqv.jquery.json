@@ -1,15 +1,21 @@
 {
     "name": "jqv",
+    "version": "2.1.0",
+    "author": {
+        "name": "Homero Cavazos (homiehomes)",
+        "url": "http://www.homerocavazos.com",
+        "email": "homerocavazos@gmail.com"
+    },
     "title": "jQuery Form Validation",
     "description": "jQuery plugin that validates forms with return callbacks",
     "keywords": [
         "form",
-        "validate"
+        "validate",
+        "validation",
+        "jQuery"
     ],
-    "version": "2.1.0",
-    "author": {
-        "name": "Homero Cavazos (homiehomes)"
-    },
+    "homepage": "http://jquery.homerocavazos.com/formvalidation/",
+    "demo": "http://jquery.homerocavazos.com/formvalidation/",
     "licenses": [
         {
             "type": "MIT",
