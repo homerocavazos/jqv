@@ -1,16 +1,8 @@
 {
   "name": "jqv",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "main": "./jquery.jqv.js",
   "dependencies": {
     "jquery": ">= 1.7"
-  },
-  "ignore": [
-  "*.json",
-  "*.markdown",
-  "*.txt",
-  ".*",
-  "Gruntfile.js",
-  "test"
-  ]
+  }
 }
