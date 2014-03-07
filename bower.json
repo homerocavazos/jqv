@@ -6,11 +6,11 @@
     "jquery": ">= 1.7"
   },
   "ignore": [
-  "**/*.txt",
-  "node_modules",
-  "bower_components",
-  "app/bower_components",
-  "test",
-  "tests"
+  "*.json",
+  "*.markdown",
+  "*.txt",
+  ".*",
+  "Gruntfile.js",
+  "test"
   ]
 }
