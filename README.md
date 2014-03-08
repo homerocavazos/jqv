@@ -2,7 +2,7 @@
 
 This jQuery plugin validates forms elements containing the class **_required_**, **_email_**, **_zip_** or **_phone_**.
 <br/><br/>
-##Activating the plugin
+###Activating the plugin
  
     
     
@@ -19,7 +19,7 @@ This jQuery plugin validates forms elements containing the class **_required_**,
 ####[Demo](http://jquery.homerocavazos.com/formvalidation/)
 
 
-##Regular Expressions
+###Regular Expressions
 The plugin has default regular expression but you can add your own.
     
     $('#form').jqv(
