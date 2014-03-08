@@ -1,7 +1,11 @@
 # **jqv Form Validation**
 
 This jQuery plugin validates forms elements containing the class **_required_**, **_email_**, **_zip_** or **_phone_**.
-<br/><br/>
+<br/>
+
+`Bower install jqv`
+
+
 ###Activating the plugin
  
     
