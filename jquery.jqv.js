@@ -18,6 +18,7 @@
 
 
         var defaults = {
+            alphaRegEX    : /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
             emailRegEx    : /^[a-zA-Z0-9][\w\+\.-]*@[a-zA-Z][\w\+\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/,
             phoneRegEx    : /^(\([0-9]{3}\)|[0-9]{3}-|[0-9]{3})([0-9]{3}-|[0-9]{3})[0-9]{4}$/,
             postalRegEx   : /^\d{5}(?:[-\s]\d{4})?$/,
@@ -28,6 +29,7 @@
 
             // error messages
             errorMsg      : 'This field required.',
+            alphaErrorMsg : 'Use alphpa letters.',
             emailErrorMsg : 'Use a valid email.',
             phoneErrorMsg : 'Use a valid US format.',
             zipErrorMsg   : 'Use a valid US format.',
@@ -75,6 +77,12 @@
                 if( fieldId.hasClass( 'phone' ) ){
                     if (fieldValue.length !== 0) {
                         this.validatePhone( fieldObj );
+                    }
+                }
+                //only checks if it's an Alpha field
+                if( fieldId.hasClass( 'alpha' ) ){
+                    if (fieldValue.length !== 0) {
+                        this.validateAlpha( fieldObj );
                     }
                 }
 
@@ -176,6 +184,20 @@
 
             },// end of validatePhone
 
+            validateAlpha : function(fieldObj) {
+
+                var $el = $('#' + fieldObj);
+                var fieldValue = $el.val();
+                fieldValue = $.trim(fieldValue);
+
+                if (!opts.alphaRegEX.test(fieldValue)){
+                    errors = true;
+                    $el.val( 'Use Letters.' );
+                    $el.css( 'color' , opts.errorColor );
+                }
+
+            },// end of validateAlpha
+
             validateCheckbox : function(checkboxObj) {
 
                 var $el = $('#' + checkboxObj);
@@ -216,6 +238,7 @@
                 case opts.phoneErrorMsg :
                 case opts.selectErrorMsg :
                 case opts.zipErrorMsg :
+                case opts.alphaErrorMsg :
                 case opts.radioErrorMsg :
                     $(this).val('');
                     $(this).css( 'color' , opts.defaultColor);
