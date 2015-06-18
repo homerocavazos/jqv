@@ -3,7 +3,7 @@
 This jQuery plugin validates forms elements containing the class **_required_**, **_email_**, **_zip_** or **_phone_**.
 <br/>
 
-`Bower install jqv`
+`bower install jqv`
 
 
 ###Activating the plugin
@@ -15,12 +15,9 @@ This jQuery plugin validates forms elements containing the class **_required_**,
 
     
     <form id="form" method="post" action="#">
-       <input id="input_NameFirst" class="required" name="NameFirst" type="text" />
+       <input id="input_NameFirst" class="required alpha" name="NameFirst" type="text" />
     </form>
     
-
-    
-####[Demo](http://jquery.homerocavazos.com/formvalidation/)
 
 
 ###Regular Expressions
