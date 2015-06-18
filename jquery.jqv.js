@@ -150,7 +150,7 @@
 
                 if (!opts.emailRegEx.test(fieldValue)){
                     errors = true;
-                    $el.val( 'Use a valid email.' );
+                    $el.val( opts.emailErrorMsg );
                     $el.css( 'color' , opts.errorColor );
                 }
 
@@ -164,7 +164,7 @@
 
                 if (!opts.postalRegEx.test(fieldValue)){
                     errors = true;
-                    $el.val( 'Use a valid US format.' );
+                    $el.val( opts.zipErrorMsg );
                     $el.css( 'color' , opts.errorColor );
                 }
 
@@ -178,7 +178,7 @@
 
                 if (!opts.phoneRegEx.test(fieldValue)){
                     errors = true;
-                    $el.val( 'Use a valid US format.' );
+                    $el.val( opts.phoneErrorMsg );
                     $el.css( 'color' , opts.errorColor );
                 }
 
@@ -192,7 +192,7 @@
 
                 if (!opts.alphaRegEX.test(fieldValue)){
                     errors = true;
-                    $el.val( 'Use Letters.' );
+                    $el.val( opts.alphaErrorMsg );
                     $el.css( 'color' , opts.errorColor );
                 }
 
