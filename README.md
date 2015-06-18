@@ -21,11 +21,31 @@ This jQuery plugin validates forms elements containing the class **_required_**,
 
 
 ###Regular Expressions
-The plugin has default regular expression but you can add your own.
+The plugin has defaults regular expression and message but you can add your own.
     
     $('#form').jqv(
+       alphaRegEX  : /^[ --- ]$/,
        emailRegEx  : /^[ --- ]$/,
        phoneRegEx  : /^[ ... ]$/,
        postalRegEx : /^[ *** ]$/,
+
+       defaultColor  : '#464646',
+       errorColor    : '#ed1c24',
+
+        // error messages
+        errorMsg      : 'This field required.',
+        alphaErrorMsg : 'Use alphpa letters.',
+        emailErrorMsg : 'Use a valid email.',
+        phoneErrorMsg : 'Use a valid US format.',
+        zipErrorMsg   : 'Use a valid US format.',
+        selectErrorMsg: 'Select One',
+        radioErrorMsg : 'You must select one.',
+        checkboxErrorMsg : 'You must check to continue.',
+
+        // custom classes
+        selectErrorClass : '',
+
+        onSuccess: function() {},
+        onErrors: function() {}
     );
     
