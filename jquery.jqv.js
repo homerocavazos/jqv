@@ -1,7 +1,7 @@
 /*
  * jQuery Form Validator Plugin
  * Copyright (c) 2013 Homero Cavazos
- * Version: 3.1.0 (25-FEB-2014)
+ * Version: 3.1.1 (24-JUN-2015)
  * Requires: jQuery v1.7.1 or later
  */
 (function ($){
@@ -188,7 +188,7 @@
                 var fieldValue = $el.val();
                 fieldValue = $.trim(fieldValue);
 
-                if (!opts.alphaRegEX.test(fieldValue)){
+                if (!opts.alphaRegEX.test(fieldValue) || fieldValue !== opts.errorMsg){
                     errors = true;
                     $el.val( opts.alphaErrorMsg );
                     $el.css( 'color' , opts.errorColor );
@@ -270,10 +270,9 @@
             // Collect radio group names.
             var radioGroupArray = [];
 
-
             // Start validating
             // Collect all the text inputs and validates
-            $('#'+formName+' :input:text').each( function() {
+            $('#'+formName+' :input:not([type=\'radio\'], [type=\'select\'], [type=\'checkbox\'])').each( function() {
                 methods.validateField( $(this).attr('id') );
             });
 
