@@ -1,7 +1,7 @@
 /*
  * jQuery Form Validator Plugin
  * Copyright (c) 2013 Homero Cavazos
- * Version: 3.1.1 (24-JUN-2015)
+ * Version: 3.1.2 (24-JUN-2015)
  * Requires: jQuery v1.7.1 or later
  */
 (function ($){
@@ -9,11 +9,12 @@
     var errors = false;
     var DEBUG = false;
 
+
     $.fn.jqv = function( options ){
 
         var $this = $(this);
         var formName = $this.attr('id');
-
+        
 
         var defaults = {
             alphaRegEX    : /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
@@ -95,7 +96,7 @@
                 if ( selectedObj.is(':disabled') ) {
                     errors = true;
 
-                    if (DEBUG) { console.log( selectName + ' : is required.'); }
+                    if (DEBUG) { methods.log( selectName + ' : is required.'); }
 
                     if ( !$('.' + selectName.toLowerCase() + '_select_error' ).length ) {
                         selectObj.next().css('color',opts.errorColor);
@@ -202,7 +203,7 @@
                 var checkboxId = $el.attr('id');
 
                 if ( $('#'+checkboxId).is(':checked') ) {
-                    if (DEBUG) { console.log( checkboxId + ' is selected'); }
+                    if (DEBUG) { methods.log( checkboxId + ' is selected'); }
 
                     $('.' + $el.attr('name') + '_checkbox_error' ).remove();
                 }
@@ -210,7 +211,7 @@
                     errors = true;
                     if ( !$('.' + $el.attr('name') + '_checkbox_error' ).length ) {
                         $('#' + checkboxObj+':first').before('<span class="' + $el.attr('name') + '_checkbox_error" style="display:block;color:' +opts.errorColor+ ';font-size:12px;">'+opts.checkboxErrorMsg+'</span>');
-                        if (DEBUG) { console.log(  $el.attr('id') + 'checkbox : is required.'); }
+                        if (DEBUG) { methods.log(  $el.attr('id') + 'checkbox : is required.'); }
                     }
                 }
 
@@ -222,8 +223,12 @@
                 });
 
 
-            }// end of validateCheckbox
-
+            },// end of validateCheckbox
+            log : function (message) {
+              if (window['console'] && console['log']) {
+                console.log(message);
+              }
+            }
         };// end of Methods
 
         var opts = $.extend( {}, defaults, options );
@@ -256,7 +261,7 @@
 
         return this.each(function(){
             $this.bind( "submit", validateForm );
-            if (DEBUG) { console.log('validating form: '+ formName ); }
+            if (DEBUG) { methods.log('validating form: '+ formName ); }
         });//end return this.each
 
 
@@ -279,12 +284,12 @@
             $('#'+formName+' :input:radio').each(function() {
                 // temporarily collect radio name
                 var radioName = $(this).attr('name');
-                if (DEBUG) { console.log( 'Radio being checked: '+ radioName ); }
+                if (DEBUG) { methods.log( 'Radio being checked: '+ radioName ); }
                 // If radio is not in array, add it
                 if ( $.inArray(radioName, radioGroupArray)===-1 && $(this).hasClass( 'required' ) ) {
                     radioGroupArray.push( radioName );
 
-                    if (DEBUG) { console.log( 'Radio being checked: '+ radioName ); }
+                    if (DEBUG) { methods.log( 'Radio being checked: '+ radioName ); }
 
                     methods.validateRadio( formName, $(this).attr('name') );
                 }
@@ -305,7 +310,7 @@
             $('#'+formName+' :input:checkbox').each(function(){
 
                 if( $(this).hasClass( 'required' ) ){
-                    //console.log('must select');
+                    //methods.log('must select');
                     methods.validateCheckbox( $(this).attr('id') );
                 }// end of checkbox check
             });
