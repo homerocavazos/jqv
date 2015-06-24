@@ -1,6 +1,6 @@
 {
   "name": "jqv",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "main": "./jquery.jqv.js",
   "dependencies": {
     "jquery": ">= 1.7"

@@ -1,7 +1,7 @@
 {
   "name": "jquery.jqv",
   "title": "jqv",
-  "version": "2.1.2",
+  "version": "3.1.1",
   "description": "Validates form elements with the class name required",
   "homepage": "https://github.com/homerocavazos/jqv",
   "repository": {
