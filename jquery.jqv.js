@@ -1,7 +1,7 @@
 /*
  * jQuery Form Validator Plugin
  * Copyright (c) 2015 Homero Cavazos
- * Version: 3.1.3 (24-JUN-2015)
+ * Version: 3.1.4 (24-JUN-2015)
  * Requires: jQuery v1.7.1 or later
  */
 (function ($){
