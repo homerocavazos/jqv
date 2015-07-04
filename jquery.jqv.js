@@ -7,7 +7,7 @@
 (function ($){
 
     var errors = false;
-    var DEBUG = true;
+    var DEBUG = false;
 
 
     $.fn.jqv = function( options ){
