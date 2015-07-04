@@ -7,7 +7,7 @@
 (function ($){
 
     var errors = false;
-    var DEBUG = false;
+    var DEBUG = true;
 
 
     $.fn.jqv = function( options ){
@@ -17,7 +17,7 @@
         
 
         var defaults = {
-            alphaRegEX    : /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
+            alphaRegEX    : /^([a-zA-Z]+\s[\w\+\.-])*[a-zA-Z][\w\+\.-]*$/,
             emailRegEx    : /^[a-zA-Z0-9][\w\+\.-]*@[a-zA-Z][\w\+\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/,
             phoneRegEx    : /^(\([0-9]{3}\)|[0-9]{3}-|[0-9]{3})([0-9]{3}-|[0-9]{3})[0-9]{4}$/,
             postalRegEx   : /^\d{5}(?:[-\s]\d{4})?$/,
@@ -28,7 +28,7 @@
 
             // error messages
             errorMsg      : 'This field required.',
-            alphaErrorMsg : 'Use alphpa letters.',
+            alphaErrorMsg : 'Use alpha letters.',
             emailErrorMsg : 'Use a valid email.',
             phoneErrorMsg : 'Use a valid US format.',
             zipErrorMsg   : 'Use a valid US format.',
@@ -187,12 +187,16 @@
 
                 var $el = $('#' + fieldObj);
                 var fieldValue = $el.val();
-                fieldValue = $.trim(fieldValue);
+                //fieldValue = $.trim(fieldValue);
 
-                if (!opts.alphaRegEX.test(fieldValue) || fieldValue !== opts.errorMsg){
+                if (!opts.alphaRegEX.test(fieldValue)){
                     errors = true;
-                    $el.val( opts.alphaErrorMsg );
                     $el.css( 'color' , opts.errorColor );
+                    $el.val( opts.alphaErrorMsg );
+                }else if(fieldValue === opts.alphaErrorMsg){
+                    errors = true;
+                    $el.css( 'color' , opts.errorColor );
+                    $el.val( opts.errorMsg );
                 }
 
             },// end of validateAlpha
