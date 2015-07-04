@@ -17,7 +17,7 @@
         
 
         var defaults = {
-            alphaRegEX    : /^([a-zA-Z]+\s[\w\+\.-])*[a-zA-Z][\w\+\.-]*$/,
+            alphaRegEX    : /^([a-zA-Z]+\s*[\w\+\.-])*[a-zA-Z]+\s*[\w\+\.-]*$/,
             emailRegEx    : /^[a-zA-Z0-9][\w\+\.-]*@[a-zA-Z][\w\+\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/,
             phoneRegEx    : /^(\([0-9]{3}\)|[0-9]{3}-|[0-9]{3})([0-9]{3}-|[0-9]{3})[0-9]{4}$/,
             postalRegEx   : /^\d{5}(?:[-\s]\d{4})?$/,
