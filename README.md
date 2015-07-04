@@ -23,7 +23,7 @@ This jQuery plugin validates forms elements containing the class **_required_**,
 ###Regular Expressions
 The plugin has defaults regular expression and message but you can add your own.
     
-    $('#form').jqv(
+    $('#form').jqv({
        alphaRegEX  : /^[ --- ]$/,
        emailRegEx  : /^[ --- ]$/,
        phoneRegEx  : /^[ ... ]$/,
@@ -47,5 +47,5 @@ The plugin has defaults regular expression and message but you can add your own.
 
         onSuccess: function() {},
         onErrors: function() {}
-    );
+    });
     
