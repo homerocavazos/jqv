@@ -34,7 +34,7 @@ The plugin has defaults regular expression and message but you can add your own.
 
         // error messages
         errorMsg      : 'This field required.',
-        alphaErrorMsg : 'Use alphpa letters.',
+        alphaErrorMsg : 'Use alpha letters.',
         emailErrorMsg : 'Use a valid email.',
         phoneErrorMsg : 'Use a valid US format.',
         zipErrorMsg   : 'Use a valid US format.',
