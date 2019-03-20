@@ -3,6 +3,7 @@
  * Copyright (c) 2015 Homero Cavazos
  * Version: 3.1.5 (24-JUN-2015)
  * Requires: jQuery v1.7.1 or later
+ * Saving for new commit test
  */
 (function ($){
 
@@ -14,7 +15,7 @@
 
         var $this = $(this);
         var formName = $this.attr('id');
-        
+
 
         var defaults = {
             alphaRegEX    : /^([a-zA-Z]+\s*[\w\+\.-])*[a-zA-Z]+\s*[\w\+\.-]*$/,
